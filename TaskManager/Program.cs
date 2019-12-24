@@ -59,7 +59,7 @@ namespace Threads
             size = Convert.ToInt32(Console.ReadLine());
             while (size <= 0 || size > 15)
             {
-                Console.WriteLine("Введенное число не оппадает в интервал. Попробуйте еще раз");
+                Console.WriteLine("Введенное число не попадает в интервал. Попробуйте еще раз");
                 size = Convert.ToInt32(Console.ReadLine());
             }
             return size;
