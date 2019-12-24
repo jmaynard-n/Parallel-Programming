@@ -17,7 +17,7 @@ namespace Threads
             int threads = GetThreads();
             matrix = new Matrix(matrix_size, matrix_size);
 
-            var threadManager = new TaskManager(3);
+            var threadManager = new TaskManager(threads);
             threadManager.TaskManagerWorkDone += WorkDone;
 
             for (var i = 0; i < matrix_size; i++)
