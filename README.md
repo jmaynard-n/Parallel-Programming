@@ -1,4 +1,4 @@
-# pp
+# Parallel Programming
 Complete projects for Parallel Programming class at NRNU MEPhI
 # Subject
 Create a programm for calculating invertible matrix using cofactors in multithreading mode. The number of threads/proccesses and size of a matrix can be choosen by user.
