@@ -54,7 +54,7 @@ namespace TcpClientServer
 
             Console.WriteLine("Введите количество подключаемых клиентов.\n Примечание: введенное число должно быть в пределах от 0 до 15");
             size = Convert.ToInt32(Console.ReadLine());
-            while (size <= 0 || size > 15)
+            while (size <= 0 || size > 39)
             {
                 Console.WriteLine("Введенное число не оппадает в интервал. Попробуйте еще раз");
                 size = Convert.ToInt32(Console.ReadLine());
@@ -70,8 +70,8 @@ namespace TcpClientServer
                 Process process = new Process();
                 process.StartInfo.FileName = Process.GetCurrentProcess().MainModule.ModuleName;
                 process.StartInfo.Arguments = "first second third 1 2 3";
-                process.StartInfo.CreateNoWindow = false;
-                process.StartInfo.UseShellExecute = true;
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.UseShellExecute = false;
 
                 process.EnableRaisingEvents = true;
 

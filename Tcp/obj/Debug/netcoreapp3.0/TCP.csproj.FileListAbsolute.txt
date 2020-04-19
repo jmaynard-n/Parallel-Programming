@@ -1,0 +1,11 @@
+C:\Users\andre\OneDrive\Рабочий стол\pp\Tcp\bin\Debug\netcoreapp3.0\TCP.exe
+C:\Users\andre\OneDrive\Рабочий стол\pp\Tcp\bin\Debug\netcoreapp3.0\TCP.deps.json
+C:\Users\andre\OneDrive\Рабочий стол\pp\Tcp\bin\Debug\netcoreapp3.0\TCP.runtimeconfig.json
+C:\Users\andre\OneDrive\Рабочий стол\pp\Tcp\bin\Debug\netcoreapp3.0\TCP.runtimeconfig.dev.json
+C:\Users\andre\OneDrive\Рабочий стол\pp\Tcp\bin\Debug\netcoreapp3.0\TCP.dll
+C:\Users\andre\OneDrive\Рабочий стол\pp\Tcp\bin\Debug\netcoreapp3.0\TCP.pdb
+C:\Users\andre\OneDrive\Рабочий стол\pp\Tcp\obj\Debug\netcoreapp3.0\TCP.csprojAssemblyReference.cache
+C:\Users\andre\OneDrive\Рабочий стол\pp\Tcp\obj\Debug\netcoreapp3.0\TCP.AssemblyInfoInputs.cache
+C:\Users\andre\OneDrive\Рабочий стол\pp\Tcp\obj\Debug\netcoreapp3.0\TCP.AssemblyInfo.cs
+C:\Users\andre\OneDrive\Рабочий стол\pp\Tcp\obj\Debug\netcoreapp3.0\TCP.dll
+C:\Users\andre\OneDrive\Рабочий стол\pp\Tcp\obj\Debug\netcoreapp3.0\TCP.pdb

@@ -31,7 +31,7 @@ namespace Threads
             Console.WriteLine("Ожидание завершения");
             Console.ReadKey();
         }
-
+        
         public static int GetSize()
         {
             int value;
@@ -57,7 +57,7 @@ namespace Threads
 
             Console.WriteLine("Введите количество потоков.\n Примечание: введенное число должно быть в пределах от 0 до 15");
             size = Convert.ToInt32(Console.ReadLine());
-            while (size <= 0 || size > 15)
+            while (size <= 0 || size > 30)
             {
                 Console.WriteLine("Введенное число не попадает в интервал. Попробуйте еще раз");
                 size = Convert.ToInt32(Console.ReadLine());

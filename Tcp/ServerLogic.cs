@@ -36,20 +36,6 @@ namespace TcpClientServer
             _listenerThread = new Thread(ConnectionRegistrator);
             _listenerThread.Start();
 
-            //while (true)
-            //{
-            //    string msg = Console.ReadLine();
-            //    if (msg==null)
-            //        continue;
-            //    int num = 0;
-            //    lock (ClientLockObject)
-            //    {
-            //        foreach (var client in _clients)
-            //        {
-            //            client.SendMessage($"{num++} - {msg}");
-            //        }
-            //    }
-            //}
         }
 
         public static void Solving()
@@ -102,13 +88,6 @@ namespace TcpClientServer
 
                 handler.SendMessage(Convert.ToString(size));
                 handler.SendMessage(MyServer.GetMatrix());
-                //handler.SendMessage(Iterator());
-
-                /*
-                // закрываем поток
-                stream.Close();
-                // закрываем подключение
-                client.Close();*/
             }
         }
     }

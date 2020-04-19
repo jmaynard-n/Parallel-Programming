@@ -53,19 +53,23 @@ namespace Processes
                 if (i >= matrix.M)
                     return;
                 Console.WriteLine("Start [{0}, {1}] ", i, j);
-                int value = i * 100 + j;
-                Process process = new Process();
+                //int value = i * 100 + j;
+                //Process process = new Process();
 
-                process.StartInfo.FileName = Process.GetCurrentProcess().MainModule.ModuleName;
-                process.StartInfo.Arguments = Convert.ToString(value);
-                process.StartInfo.CreateNoWindow = true;
-                process.StartInfo.UseShellExecute = false;
+                //process.StartInfo.FileName = Process.GetCurrentProcess().MainModule.ModuleName;
+                //process.StartInfo.Arguments = Convert.ToString(value);
+                //process.StartInfo.CreateNoWindow = true;
+                //process.StartInfo.UseShellExecute = false;
 
-                process.EnableRaisingEvents = true;
-                process.Exited += ProcessOnExited;
+                //process.EnableRaisingEvents = true;
+                //process.Exited += ProcessOnExited;
 
-                saved[i, j] = process;
-                saved[i, j].Start();
+                //saved[i, j] = process;
+                //saved[i, j].Start();
+
+                ProcessWrap pr = new ProcessWrap(i, j);
+                pr.Start();
+
                 j++;
                 if (j == matrix.N)
                 {
@@ -75,28 +79,36 @@ namespace Processes
             }
         }
 
-        private static void ProcessOnExited(object sender, EventArgs e)
+        //private static void ProcessOnExited(object sender, EventArgs e)
+        private static void ProcessOnExited(int ret, ProcessWrap pr)
         {
             finishedProcess++;
             Console.WriteLine("Process {0} finised!", finishedProcess);
-
+            try
+            {
+                matrix.minor[pr.I, pr.J] = ret;
+            }
+            finally
+            {
+                pr.End();
+            }
             if (finishedProcess == problemSize)
             {
-                for (var i = 0; i < matrix.N; i++)
-                {
-                    for (var j = 0; j < matrix.N; j++)
-                    {
-                        try
-                        {
-                            int ret = saved[i, j].ExitCode;
-                            matrix.minor[i, j] = ret;
-                        }
-                        finally
-                        {
-                            saved[i, j].Dispose();
-                        }
-                    }
-                }
+                //for (var i = 0; i < matrix.N; i++)
+                //{
+                //    for (var j = 0; j < matrix.N; j++)
+                //    {
+                //        try
+                //        {
+                //            int ret = saved[i, j].ExitCode;
+                //            matrix.minor[i, j] = ret;
+                //        }
+                //        finally
+                //        {
+                //            saved[i, j].Dispose();
+                //        }
+                //    }
+                //}
 
                 InvertMatrix();
             }
@@ -110,7 +122,7 @@ namespace Processes
             int value = Convert.ToInt32(args[0]);
             Console.WriteLine(value);
             int res = (int)tempMatrix.Minor(value);
-            Thread.Sleep(5000);
+            //Thread.Sleep(5000);
             return res;
         }
 
@@ -157,6 +169,60 @@ namespace Processes
                 size = Convert.ToInt32(Console.ReadLine());
             }
             return size;
+        }
+    }
+
+    class ProcessWrap
+    {
+        private Process process;
+        public delegate void ExitedHandler(int ret, ProcessWrap pr);
+        public event ExitedHandler Notify;
+
+        private int i;
+        public int I 
+        { 
+            get { return i; } 
+            set { i = value; } 
+        }
+        private int j;
+        public int J 
+        { 
+            get { return j; } 
+            set { j = value; }
+        }
+
+        public ProcessWrap(int i, int j)
+        {
+            process = new Process();
+
+            int value = i * 100 + j;
+
+            process.StartInfo.FileName = Process.GetCurrentProcess().MainModule.ModuleName;
+            process.StartInfo.Arguments = Convert.ToString(value);
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.UseShellExecute = false;
+
+            process.EnableRaisingEvents = true;
+            process.Exited += ProcessExited;
+
+            this.I = i;
+            this.J = j;
+        }
+
+        private void ProcessExited(object sender, EventArgs e)
+        {
+            int ret = process.ExitCode;
+            Notify?.Invoke(ret, this);
+        }
+
+        public void Start()
+        {
+            process.Start();
+        }
+
+        public void End()
+        {
+            process.Dispose();
         }
     }
 }

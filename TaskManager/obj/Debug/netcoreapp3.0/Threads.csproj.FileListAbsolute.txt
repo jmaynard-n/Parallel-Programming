@@ -1,0 +1,11 @@
+C:\Users\andre\OneDrive\Рабочий стол\pp\TaskManager\bin\Debug\netcoreapp3.0\Threads.exe
+C:\Users\andre\OneDrive\Рабочий стол\pp\TaskManager\bin\Debug\netcoreapp3.0\Threads.deps.json
+C:\Users\andre\OneDrive\Рабочий стол\pp\TaskManager\bin\Debug\netcoreapp3.0\Threads.runtimeconfig.json
+C:\Users\andre\OneDrive\Рабочий стол\pp\TaskManager\bin\Debug\netcoreapp3.0\Threads.runtimeconfig.dev.json
+C:\Users\andre\OneDrive\Рабочий стол\pp\TaskManager\bin\Debug\netcoreapp3.0\Threads.dll
+C:\Users\andre\OneDrive\Рабочий стол\pp\TaskManager\bin\Debug\netcoreapp3.0\Threads.pdb
+C:\Users\andre\OneDrive\Рабочий стол\pp\TaskManager\obj\Debug\netcoreapp3.0\Threads.csprojAssemblyReference.cache
+C:\Users\andre\OneDrive\Рабочий стол\pp\TaskManager\obj\Debug\netcoreapp3.0\Threads.AssemblyInfoInputs.cache
+C:\Users\andre\OneDrive\Рабочий стол\pp\TaskManager\obj\Debug\netcoreapp3.0\Threads.AssemblyInfo.cs
+C:\Users\andre\OneDrive\Рабочий стол\pp\TaskManager\obj\Debug\netcoreapp3.0\Threads.dll
+C:\Users\andre\OneDrive\Рабочий стол\pp\TaskManager\obj\Debug\netcoreapp3.0\Threads.pdb
